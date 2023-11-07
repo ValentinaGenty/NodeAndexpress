@@ -9,7 +9,8 @@ app.get("/",(req,res)=>{
     res.sendFile(absolutePath);
 })
 
-
+stylePath=__dirname+"/public";
+app.use(express.static(stylePath));
 
 
 
