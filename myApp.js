@@ -10,7 +10,7 @@ app.get("/",(req,res)=>{
 })
 
 stylePath=__dirname+"/public";
-app.use(express.static(stylePath));
+app.use("/",express.static(stylePath));
 
 
 
