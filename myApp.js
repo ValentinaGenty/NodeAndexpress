@@ -11,14 +11,17 @@ app.get("/",(req,res)=>{
 
 stylePath=__dirname+"/public";
 app.use("/public",express.static(stylePath));
-let message="Hello json";
+
+
+
+app.get("/json",(req,res)=>{
+    let message="Hello json";
 if(process.env.MESSAGE_STYLE==="uppercase"){
     message="HELLO JSON";
-}
-app.get("/json",(req,res)=>{
+};
         res.json({
             "message":message
-        })
+        });
 })
 
 
