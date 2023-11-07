@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 let express = require('express');
 let app = express();
 
@@ -13,9 +15,17 @@ stylePath=__dirname+"/public";
 app.use("/public",express.static(stylePath));
 
 app.get("/json",(req,res)=>{
-    res.json({
-        "message":"Hello json"
-    })
+    if(process.env=="uppercase"){
+        res.json({
+            "message":"HELLO JSON"
+        })
+    }
+    else{
+        res.json({
+            "message":"Hello json"
+        })
+    }
+    
 })
 
 
