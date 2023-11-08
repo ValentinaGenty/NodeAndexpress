@@ -14,14 +14,10 @@ app.use("/public",express.static(stylePath));
 
 
 
-app.get("/json",(req,res)=>{
-    let message="Hello json";
-if(process.env['MESSAGE_STYLE']==="uppercase"){
-    message="HELLO JSON";
-};
-        res.json({
-            "message":message
-        });
+app.use(function(req,res,next){
+    let string=req.method+" "+req.path+" "+req.ip;
+    console.log(string);
+    next();
 })
 
 
