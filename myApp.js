@@ -15,7 +15,7 @@ app.use("/public",express.static(stylePath));
 
 
 app.use(function(req,res,next){
-    let string=req.method+" "+req.path+" "+req.ip;
+    let string=req.method+" "+req.path+" "+"-"+" "+req.ip;
     console.log(string);
     next();
 })
