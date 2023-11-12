@@ -34,6 +34,14 @@ app.get('/:word/echo',(req,res,next)=>{
     next();
 })
 
+app.route("/name").get((req,res)=>{
+    let first = req.query.first;
+    let last = req.query.last;
+
+    res.send({
+        "name":first+" "+last
+    })
+})
 
 
 
